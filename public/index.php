@@ -32,7 +32,7 @@ $routes = [
         '/'                               => ['App\Controllers\HomeController', 'index'],
         '/dashboard'                      => ['App\Controllers\DashboardController', 'index'],
 
-        // Web pages
+        // Web pages - core
         '/entry/new'                      => ['App\Controllers\WebJournalEntriesController', 'newEntryForm'],
         '/journal-entries'                => ['App\Controllers\WebJournalEntriesListController', 'index'],
         '/journal-entries/show'           => ['App\Controllers\WebJournalEntriesListController', 'show'],
@@ -44,7 +44,20 @@ $routes = [
         '/reports/balance-sheet'          => ['App\Controllers\WebReportsController', 'balanceSheetPage'],
         '/reports/ledger'                 => ['App\Controllers\WebLedgerController', 'index'],
 
-        // APIs
+        // Web pages - commercial module
+        '/customers'                      => ['App\Controllers\WebCustomersController', 'index'],
+        '/suppliers'                      => ['App\Controllers\WebSuppliersController', 'index'],
+        '/items'                          => ['App\Controllers\WebItemsController', 'index'],
+        '/sales-invoices'                 => ['App\Controllers\WebSalesInvoicesController', 'index'],
+        '/sales-invoices/new'             => ['App\Controllers\WebSalesInvoicesController', 'newForm'],
+        '/sales-invoices/show'            => ['App\Controllers\WebSalesInvoicesController', 'show'],
+        '/purchase-invoices'              => ['App\Controllers\WebPurchaseInvoicesController', 'index'],
+        '/purchase-invoices/new'          => ['App\Controllers\WebPurchaseInvoicesController', 'newForm'],
+        '/purchase-invoices/show'         => ['App\Controllers\WebPurchaseInvoicesController', 'show'],
+        '/receipts'                       => ['App\Controllers\WebReceiptsController', 'index'],
+        '/payments'                       => ['App\Controllers\WebPaymentsController', 'index'],
+
+        // APIs - core
         '/api/accounts'                   => ['App\Controllers\AccountsController', 'index'],
         '/api/accounts/tree'              => ['App\Controllers\ChartOfAccountsController', 'tree'],
         '/api/journal-entries'            => ['App\Controllers\JournalEntriesController', 'index'],
@@ -54,10 +67,46 @@ $routes = [
         '/api/reports/ledger'             => ['App\Controllers\ReportsController', 'ledger'],
         '/api/reports/income-statement'   => ['App\Controllers\ReportsController', 'incomeStatement'],
         '/api/reports/balance-sheet'      => ['App\Controllers\ReportsController', 'balanceSheet'],
+
+        // APIs - commercial module
+        '/api/customers'                  => ['App\Controllers\CustomersController', 'index'],
+        '/api/suppliers'                  => ['App\Controllers\SuppliersController', 'index'],
+        '/api/items'                      => ['App\Controllers\ItemsController', 'index'],
+        '/api/sales-invoices'             => ['App\Controllers\SalesInvoicesController', 'index'],
+        '/api/purchase-invoices'          => ['App\Controllers\PurchaseInvoicesController', 'index'],
+        '/api/receipts'                   => ['App\Controllers\ReceiptsController', 'index'],
+        '/api/payments'                   => ['App\Controllers\PaymentsController', 'index'],
     ],
     'POST' => [
+        // Core
         '/api/journal-entries'            => ['App\Controllers\JournalEntriesController', 'store'],
         '/api/accounts'                   => ['App\Controllers\AccountsController', 'store'],
+
+        // Web form posts - commercial module
+        '/customers'                      => ['App\Controllers\WebCustomersController', 'store'],
+        '/suppliers'                      => ['App\Controllers\WebSuppliersController', 'store'],
+        '/items'                          => ['App\Controllers\WebItemsController', 'store'],
+        '/sales-invoices'                 => ['App\Controllers\WebSalesInvoicesController', 'store'],
+        '/sales-invoices/post'            => ['App\Controllers\WebSalesInvoicesController', 'postInvoice'],
+        '/purchase-invoices'              => ['App\Controllers\WebPurchaseInvoicesController', 'store'],
+        '/purchase-invoices/post'         => ['App\Controllers\WebPurchaseInvoicesController', 'postInvoice'],
+        '/receipts'                       => ['App\Controllers\WebReceiptsController', 'store'],
+        '/receipts/post'                  => ['App\Controllers\WebReceiptsController', 'postReceipt'],
+        '/payments'                       => ['App\Controllers\WebPaymentsController', 'store'],
+        '/payments/post'                  => ['App\Controllers\WebPaymentsController', 'postPayment'],
+
+        // API posts - commercial module
+        '/api/customers'                  => ['App\Controllers\CustomersController', 'store'],
+        '/api/suppliers'                  => ['App\Controllers\SuppliersController', 'store'],
+        '/api/items'                      => ['App\Controllers\ItemsController', 'store'],
+        '/api/sales-invoices'             => ['App\Controllers\SalesInvoicesController', 'store'],
+        '/api/sales-invoices/post'        => ['App\Controllers\SalesInvoicesController', 'post'],
+        '/api/purchase-invoices'          => ['App\Controllers\PurchaseInvoicesController', 'store'],
+        '/api/purchase-invoices/post'     => ['App\Controllers\PurchaseInvoicesController', 'post'],
+        '/api/receipts'                   => ['App\Controllers\ReceiptsController', 'store'],
+        '/api/receipts/post'              => ['App\Controllers\ReceiptsController', 'post'],
+        '/api/payments'                   => ['App\Controllers\PaymentsController', 'store'],
+        '/api/payments/post'              => ['App\Controllers\PaymentsController', 'post'],
     ],
 ];
 

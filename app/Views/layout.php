@@ -9,13 +9,20 @@ $base = '/20/accounting/acc1/public';
 $navItems = [
     ['key' => 'dashboard', 'label' => 'لوحة التحكم',    'href' => $base . '/dashboard'],
     ['key' => 'entry',     'label' => 'إدخال قيد',      'href' => $base . '/entry/new'],
-    ['key' => 'je',        'label' => 'القيود',         'href' => $base . '/journal-entries'],
-	['key' => 'accounts', 'label' => 'دليل الحسابات', 'href' => $base . '/accounts'],
+    ['key' => 'je',        'label' => 'القيود',          'href' => $base . '/journal-entries'],
+    ['key' => 'accounts',  'label' => 'دليل الحسابات',  'href' => $base . '/accounts'],
     ['key' => 'trial',     'label' => 'ميزان المراجعة', 'href' => $base . '/reports/trial-balance'],
     ['key' => 'income',    'label' => 'قائمة الدخل',    'href' => $base . '/reports/income-statement'],
     ['key' => 'balance',   'label' => 'الميزانية',      'href' => $base . '/reports/balance-sheet'],
     ['key' => 'ledger',    'label' => 'كشف حساب',       'href' => $base . '/reports/ledger'],
-	
+    // Commercial module
+    ['key' => 'customers', 'label' => 'العملاء',         'href' => $base . '/customers'],
+    ['key' => 'suppliers', 'label' => 'الموردون',        'href' => $base . '/suppliers'],
+    ['key' => 'items',     'label' => 'الأصناف',         'href' => $base . '/items'],
+    ['key' => 'sales',     'label' => 'مبيعات',          'href' => $base . '/sales-invoices'],
+    ['key' => 'purchases', 'label' => 'مشتريات',         'href' => $base . '/purchase-invoices'],
+    ['key' => 'receipts',  'label' => 'سندات القبض',     'href' => $base . '/receipts'],
+    ['key' => 'payments',  'label' => 'سندات الدفع',     'href' => $base . '/payments'],
 ];
 
 ?><!DOCTYPE html>
