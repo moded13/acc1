@@ -234,7 +234,8 @@ class PostingService
         }
 
         // is_postable guard
-        $ids = array_values(array_unique(array_map(fn($l) => (int)$l['account_id'], $lines)));
+        $rawIds = array_map(fn($l) => (int)$l['account_id'], $lines);
+        $ids    = array_values(array_unique($rawIds));
         $in  = implode(',', array_fill(0, count($ids), '?'));
         $stmt = $this->db->prepare("SELECT id, is_postable FROM chart_of_accounts WHERE id IN ($in)");
         $stmt->execute($ids);
